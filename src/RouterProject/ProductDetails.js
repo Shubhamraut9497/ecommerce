@@ -13,12 +13,11 @@ const ProductDetails=()=>{
             setProduct(result)
             setLoading(false);
           })
-    },[])
-    if(loading){
-        return<h1>Loading....</h1>
-    }
+    },[product])
+    
     return (
         <>
+        {loading===true ?<h1>Loading...</h1>:<></>}
         <div  id='productD'>
         <img src={product.image}  width={400} height={400} alt="img"/>
         <div style={{textAlign:'center'}}>
